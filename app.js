@@ -9,7 +9,6 @@ var sassMiddleware = require('node-sass-middleware')
 // 引入 routes 檔案
 var index = require('./routes/index')
 var users = require('./routes/users')
-var auth = require('./routes/api/auth') /* api */
 var cr00 = require('./routes/api/cr00') /* api */
 
 var app = express()
@@ -47,7 +46,6 @@ app.use((req, res, next) => {
 // 設定 routes 的 root path
 app.use('/', index)
 app.use('/users', users)
-app.use('/api/auth', auth) /* api */
 app.use('/api', cr00) /* api */
 
 // catch 404 and forward to error handler
